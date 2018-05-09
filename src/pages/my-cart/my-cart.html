@@ -1,0 +1,55 @@
+<!--
+  Generated template for the MyCartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="title">
+    <ion-title class="nav-headline">My Cart</ion-title>
+    <ion-buttons id="cart-btn" left>
+      <button ion-button>
+        <ion-badge>{{cartCount}}<ion-icon name="cart"></ion-icon></ion-badge>
+      </button>
+    </ion-buttons>
+    <ion-buttons class="home" end>
+      <button ion-button (click)="closeModal()">
+        <ion-badge><ion-icon name="home"></ion-icon></ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <h4>Total Amount: ${{totalAmount | number:'1.2-2'}}</h4>
+  <button class="pay-btn" ion-button (click)="payCart(totalAmount)">Pay</button>
+
+</ion-header>
+
+<ion-content padding class="background-theme">
+
+  <div *ngIf="!cartItems.length">
+    <h2 class="cartEmptyTagLine">Cart is Empty.. 🙃</h2>
+    <h2 class="cartEmpty">Please scan using above button and fill your cart with items you love..😍😍</h2>
+  </div>
+  <div *ngIf="cartItems.length">
+    <ion-card class="card-theme" *ngFor="let scannedItem of cartItems">
+      <ion-item class="card-theme">
+        <ion-row>
+          <ion-col>
+            <img src={{scannedItem.image}}>
+          </ion-col>
+          <ion-col>
+            <h1>{{scannedItem.name}}</h1>
+            <p>Description: {{scannedItem.desc}}</p>
+            <p>Quantity: {{scannedItem.itemQty}}</p>
+            <p>Total Price: ${{scannedItem.itemPriceTotal | number:'1.2-2'}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
+    <ion-card class="card-theme" padding>
+      <h2>Total Amount: ${{totalAmount | number:'1.2-2'}}</h2>
+      <button ion-button (click)="payCart(totalAmount)">Pay</button>
+    </ion-card>
+  </div>
+
+</ion-content>

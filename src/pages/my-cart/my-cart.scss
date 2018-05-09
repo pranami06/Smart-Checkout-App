@@ -1,0 +1,39 @@
+page-my-cart {
+  .cartEmpty{
+    margin-left: 25px;
+    margin-right: 20px;
+    opacity: 0.3;
+  }
+  .cartEmptyTagLine{
+    text-align: center;
+    padding-top: 28%;
+    opacity: 0.4;
+    font-family: "Monotype Corsiva";
+  }
+  .card-theme{
+    background: transparent;
+    //opacity: 0.6;
+  }
+  .nav-headline{
+   text-align: center;
+  }
+  .background-theme{
+    background: linear-gradient(to bottom, #E28413, #CC5209, #EA1744);
+    color: white;
+  }
+  button{
+    opacity: 0.8;
+  }
+  img{
+    height: 80%;
+    width: 40%;
+  }
+  .pay-btn{
+    margin-left: 8%;
+    width: 83%;
+    margin-right: 8px;
+  }
+  h4{
+    text-align: center;
+  }
+}

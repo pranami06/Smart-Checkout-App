@@ -1,14 +1,93 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="title" [hideBackButton]="true">
     <ion-title>
-      Ionic Blank
+      <ion-row>
+        <ion-col><img src="assets/imgs/cart.png" class="logo"></ion-col>
+        <ion-col class="nav-headline">Smart Checkout</ion-col>
+      </ion-row>
     </ion-title>
+    <ion-buttons id="cart-btn" end>
+      <button ion-button (click)="showCart()">
+        <ion-badge>{{cartItemsCount}}<ion-icon name="cart"></ion-icon></ion-badge>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+  <button ion-button color="button" block (click)="scan()">Please Scan Items!!</button>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="background-theme" padding>
+  <br><br>
+  <div *ngIf="!cartItems.length">
+    <h2 class="cartEmptyTagLine">Cart is Empty.. 🙃</h2>
+    <h2 class="cartEmpty">Please scan using above button and fill your cart with items you love..😍😍</h2>
+  </div>
+  <div *ngIf="cartItems.length">
+    <ion-card class="card-theme" *ngFor="let scannedItem of cartItems">
+      <!--<ion-item>-->
+      <ion-row>
+        <ion-col>
+          <br>
+          <img src={{scannedItem.image}}>
+        </ion-col>
+        <ion-col>
+          <br>
+          <h1>{{scannedItem.name}}</h1>
+          <p>Description: {{scannedItem.desc}}</p>
+          <p>Price per Quantity: {{scannedItem.price | currency:'USD': true}}</p>
+
+          <ion-item class="card-theme">
+            <ion-label>Quantity: </ion-label>
+            <ion-select #givenQuantity (ionChange)="updateQuantity(scannedItem, givenQuantity.value)">
+              <ion-option value="0">0</ion-option>
+              <ion-option value="1" [selected]="true">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+              <ion-option value="5">5</ion-option>
+              <ion-option value="6">6</ion-option>
+              <ion-option value="7">7</ion-option>
+              <ion-option value="8">8</ion-option>
+              <ion-option value="9">9</ion-option>
+              <ion-option value="10">10</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!--</ion-item>-->
+    </ion-card>
+  </div>
+
+  <!--<div>-->
+  <!--<ion-card>-->
+  <!--<ion-row>-->
+  <!--<ion-col>-->
+  <!--<br>-->
+  <!--<img src="../../assets/imgs/items/lays-stax-sour-cream-onion.png">-->
+  <!--</ion-col>-->
+  <!--<ion-col>-->
+  <!--<br>-->
+  <!--<h1>Lays</h1>-->
+  <!--<p>Description:Chips</p>-->
+  <!--<p>Price per Quantity: $2.00</p>-->
+  <!--<ion-item>-->
+  <!--<ion-label>Select: </ion-label>-->
+  <!--<ion-select #givenQuantity>-->
+  <!--<ion-option value="0">0</ion-option>-->
+  <!--<ion-option value="1" [selected]="true">1</ion-option>-->
+  <!--<ion-option value="2">2</ion-option>-->
+  <!--<ion-option value="3">3</ion-option>-->
+  <!--<ion-option value="4">4</ion-option>-->
+  <!--<ion-option value="5">5</ion-option>-->
+  <!--<ion-option value="6">6</ion-option>-->
+  <!--<ion-option value="7">7</ion-option>-->
+  <!--<ion-option value="8">8</ion-option>-->
+  <!--<ion-option value="9">9</ion-option>-->
+  <!--<ion-option value="10">10</ion-option>-->
+  <!--</ion-select>-->
+  <!--</ion-item>-->
+  <!--</ion-col>-->
+  <!--</ion-row>-->
+  <!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
+  <!--</ion-card>-->
+  <!--</div>-->
 </ion-content>

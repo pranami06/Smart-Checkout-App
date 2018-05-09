@@ -1,0 +1,67 @@
+{
+  "itemList": [
+    {
+      "id" : 1234,
+      "name": "Lays",
+      "desc": "Chips",
+      "price": 1.48,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/lays-stax-sour-cream-onion.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 2345,
+      "name": "Nutella",
+      "desc": "Peanut Butter",
+      "price": 3.00,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/nutella.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 3456,
+      "name": "Coca-Cola",
+      "desc": "Cold drink",
+      "price": 1.23,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/coke.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 4567,
+      "name": "Dairy Milk",
+      "desc": "Chocolate",
+      "price": 2.45,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/dairyMilk.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 5678,
+      "name": "Bounty",
+      "desc": "Paper Towels",
+      "price": 18.00,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/bounty.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 6789,
+      "name": "Tide",
+      "desc": "Detergent",
+      "price": 5.30,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/tide.png",
+      "itemPriceTotal": 1
+    },
+    {
+      "id": 7890,
+      "name": "Häagen-Dazs",
+      "desc": "IceCream",
+      "price": 3.20,
+      "itemQty": 0,
+      "image": "./assets/imgs/items/haagen-Dazs.png",
+      "itemPriceTotal": 1
+    }
+  ]
+}
