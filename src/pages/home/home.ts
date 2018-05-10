@@ -19,6 +19,7 @@ export class HomePage {
   cartItemsCount: number = 0;
   itemExists: boolean = false;
   givenQty: number = 1;
+  itemFound: boolean = true;
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
               public barcodeScanner: BarcodeScanner,
@@ -56,19 +57,39 @@ export class HomePage {
   scan() {
     this.options = {
       prompt: 'Scan a barcode to see results'
-    }
+    };
     this.barcodeScanner.scan(this.options).then(barcodeData => {
       this.itemId = barcodeData.text;
-      if(this.itemId){
-        this.scannedItem = this.getItem(this.itemId);
-        this.addToCart(this.scannedItem);
+      if(this.itemId) {
+        if(this.checkIfItemPresentInStore(this.itemId)){
+          this.scannedItem = this.getItem(this.itemId);
+          this.addToCart(this.scannedItem);
+        }else{
+          this.itemNotFoundAlert();
+        }
       }else {
-        this.cartEmptyAlert();
+        if(!this.cartItems.length){
+          this.cartEmptyAlert();
+        }
       }
 
     }).catch(err => {
       console.log('Error', err);
     });
+  }
+
+  // check if store has a scanned item
+  checkIfItemPresentInStore(id: number) {
+    this.itemFound = false;
+    for (let item of this.allItems) {
+      if (id == item.id) {
+        this.itemFound = true;
+        break;
+      } else {
+        this.itemFound = false;
+      }
+    }
+    return this.itemFound
   }
 
   // get particular item based on id
@@ -136,6 +157,16 @@ export class HomePage {
     let alert = this.alertCtrl.create({
       title: 'Item Exists!!',
       subTitle: 'Item is already in cart, please update the quantity',
+      buttons: ['Ok']
+    });
+    alert.present();
+  }
+
+  // Alert if item is not present in store
+  itemNotFoundAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Item Not Found!!',
+      subTitle: 'Currently we do not have this item \, please check back later',
       buttons: ['Ok']
     });
     alert.present();
