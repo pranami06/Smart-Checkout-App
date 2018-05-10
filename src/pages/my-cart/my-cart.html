@@ -31,7 +31,7 @@
 
   <div *ngIf="!cartItems.length">
     <h2 class="cartEmptyTagLine">Cart is Empty.. 🙃</h2>
-    <h2 class="cartEmpty">Please scan using above button and fill your cart with items you love..😍😍</h2>
+    <h2 class="cartEmpty">Scan products and fill your cart with items you love..😍😍</h2>
   </div>
   <div *ngIf="cartItems.length">
     <ion-card class="card-theme animated fadeIn fadeInUp" *ngFor="let scannedItem of cartItems">
@@ -49,7 +49,7 @@
         </ion-row>
       </ion-item>
     </ion-card>
-    <ion-card class="card-theme animated fadeIn fadeInUp" padding>
+    <ion-card class="card-theme animated delay-one fadeIn fadeInUp" padding>
       <h4>Total Amount: ${{totalAmount | number:'1.2-2'}}</h4>
       <button class="pay-btn" ion-button (click)="payCart(totalAmount)">Pay</button>
     </ion-card>

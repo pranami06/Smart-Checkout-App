@@ -20,10 +20,11 @@
 .background-theme{
   background: linear-gradient(to bottom, #E28413, #CC5209, #EA1744);
   color: white;
+  font-family: "Open Sans";
 }
 
 .nav-animation{
-  text-shadow: 4px 5px 10px #EA1744;
+  text-shadow: 6px 8px 15px #EA1744;
   font-size: larger;
   position: relative;
   animation: animateTextShadow 8s linear infinite;
@@ -37,15 +38,14 @@ button{
   opacity: 0.8;
 }
 .cartEmpty{
-  margin-left: 25px;
-  margin-right: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
   opacity: 0.3;
 }
 .cartEmptyTagLine{
   text-align: center;
   padding-top: 18%;
   opacity: 0.4;
-  font-family: "Monotype Corsiva";
 }
 
 .animated {
@@ -84,10 +84,14 @@ button{
 }
 
 @keyframes animateTextShadow {
-  0%   {left:-10%;}
+  0%   {left:-5%;}
 
-  50%  {left:10%;}
+  50%  {left:5%;}
 
-  100%  {left:-10%; right:100%;}
+  100%  {left:-5%; right:90%;}
 
+}
+
+.delay-one {
+  animation-delay: 1s;
 }

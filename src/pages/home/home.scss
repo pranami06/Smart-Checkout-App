@@ -15,9 +15,20 @@ page-home {
   }
 
   .nav-headline{
-    margin-left: -114px;
-    margin-top: 12px;
-    font-family: "Monotype Corsiva";
+    margin-left: -118px;
+    margin-top: 8px;
+    font-family: "Titan One";
+  }
+
+  .cartEmpty{
+    margin-left: 40px;
+    margin-right: 35px;
+    opacity: 0.3;
+  }
+
+  .icon-barcode{
+    margin-left: 10px;
+    font-size: 20px;
   }
 
 }

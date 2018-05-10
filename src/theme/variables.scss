@@ -16,7 +16,8 @@ $app-direction: ltr;
 
 //$background-color: #CC5209;
 $alert-md-background-color: orange;
-$font-family-md-base: "Monotype Corsiva";
+$font-family-base:"Open Sans";
+
 
 
 // Shared Variables
@@ -93,3 +94,16 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: 'Titan One';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Titan_One/TitanOne-Regular.ttf");
+}
