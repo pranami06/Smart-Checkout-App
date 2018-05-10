@@ -3,7 +3,7 @@
     <ion-title>
       <ion-row>
         <ion-col><img src="assets/imgs/cart.png" class="logo"></ion-col>
-        <ion-col class="nav-headline">Smart Checkout</ion-col>
+        <ion-col class="nav-headline nav-animation">Smart Checkout</ion-col>
       </ion-row>
     </ion-title>
     <ion-buttons id="cart-btn" end>
@@ -22,7 +22,7 @@
     <h2 class="cartEmpty">Please scan using above button and fill your cart with items you love..😍😍</h2>
   </div>
   <div *ngIf="cartItems.length">
-    <ion-card class="card-theme" *ngFor="let scannedItem of cartItems">
+    <ion-card class="card-theme animated fadeIn fadeInUp" *ngFor="let scannedItem of cartItems">
       <!--<ion-item>-->
       <ion-row>
         <ion-col>
@@ -36,8 +36,8 @@
           <p>Price per Quantity: {{scannedItem.price | currency:'USD': true}}</p>
 
           <ion-item class="card-theme">
-            <ion-label>Quantity: </ion-label>
-            <ion-select #givenQuantity (ionChange)="updateQuantity(scannedItem, givenQuantity.value)">
+            <ion-label color="label">Quantity: </ion-label>
+            <ion-select color="label" #givenQuantity (ionChange)="updateQuantity(scannedItem, givenQuantity.value)">
               <ion-option value="0">0</ion-option>
               <ion-option value="1" [selected]="true">1</ion-option>
               <ion-option value="2">2</ion-option>

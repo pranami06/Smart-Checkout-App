@@ -16,6 +16,7 @@ $app-direction: ltr;
 
 //$background-color: #CC5209;
 $alert-md-background-color: orange;
+$font-family-md-base: "Monotype Corsiva";
 
 
 // Shared Variables
@@ -43,7 +44,8 @@ $colors: (
   light:      #FB8B24,
   dark:       #F74201,
   button:     #EA1744,
-  title:      #E28413
+  title:      #E28413,
+  label:      black
 );
 
 

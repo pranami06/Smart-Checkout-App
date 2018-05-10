@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="title">
-    <ion-title class="nav-headline">My Cart</ion-title>
+    <ion-title class="nav-headline nav-animation">My Cart</ion-title>
     <ion-buttons id="cart-btn" left>
       <button ion-button>
         <ion-badge>{{cartCount}}<ion-icon name="cart"></ion-icon></ion-badge>
@@ -19,8 +19,11 @@
     </ion-buttons>
   </ion-navbar>
 
-  <h4>Total Amount: ${{totalAmount | number:'1.2-2'}}</h4>
-  <button class="pay-btn" ion-button (click)="payCart(totalAmount)">Pay</button>
+  <div *ngIf="cartItems.length">
+    <h4>Total Amount: ${{totalAmount | number:'1.2-2'}}</h4>
+    <button class="pay-btn" ion-button (click)="payCart(totalAmount)">Pay</button>
+  </div>
+
 
 </ion-header>
 
@@ -31,7 +34,7 @@
     <h2 class="cartEmpty">Please scan using above button and fill your cart with items you love..😍😍</h2>
   </div>
   <div *ngIf="cartItems.length">
-    <ion-card class="card-theme" *ngFor="let scannedItem of cartItems">
+    <ion-card class="card-theme animated fadeIn fadeInUp" *ngFor="let scannedItem of cartItems">
       <ion-item class="card-theme">
         <ion-row>
           <ion-col>
@@ -39,17 +42,16 @@
           </ion-col>
           <ion-col>
             <h1>{{scannedItem.name}}</h1>
-            <p>Description: {{scannedItem.desc}}</p>
-            <p>Quantity: {{scannedItem.itemQty}}</p>
-            <p>Total Price: ${{scannedItem.itemPriceTotal | number:'1.2-2'}}</p>
+            <h5 class="para-color">Description: {{scannedItem.desc}}</h5>
+            <h5>Quantity: {{scannedItem.itemQty}}</h5>
+            <h5>Total Price: ${{scannedItem.itemPriceTotal | number:'1.2-2'}}</h5>
           </ion-col>
         </ion-row>
       </ion-item>
     </ion-card>
-    <ion-card class="card-theme" padding>
-      <h2>Total Amount: ${{totalAmount | number:'1.2-2'}}</h2>
-      <button ion-button (click)="payCart(totalAmount)">Pay</button>
+    <ion-card class="card-theme animated fadeIn fadeInUp" padding>
+      <h4>Total Amount: ${{totalAmount | number:'1.2-2'}}</h4>
+      <button class="pay-btn" ion-button (click)="payCart(totalAmount)">Pay</button>
     </ion-card>
   </div>
-
 </ion-content>

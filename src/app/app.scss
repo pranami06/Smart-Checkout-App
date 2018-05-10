@@ -14,3 +14,80 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+.background-theme{
+  background: linear-gradient(to bottom, #E28413, #CC5209, #EA1744);
+  color: white;
+}
+
+.nav-animation{
+  text-shadow: 4px 5px 10px #EA1744;
+  font-size: larger;
+  position: relative;
+  animation: animateTextShadow 8s linear infinite;
+}
+
+.card-theme{
+  background: transparent;
+  //opacity: 0.6;
+}
+button{
+  opacity: 0.8;
+}
+.cartEmpty{
+  margin-left: 25px;
+  margin-right: 20px;
+  opacity: 0.3;
+}
+.cartEmptyTagLine{
+  text-align: center;
+  padding-top: 18%;
+  opacity: 0.4;
+  font-family: "Monotype Corsiva";
+}
+
+.animated {
+  animation-duration: .8s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes animateTextShadow {
+  0%   {left:-10%;}
+
+  50%  {left:10%;}
+
+  100%  {left:-10%; right:100%;}
+
+}
